@@ -4,7 +4,7 @@ all:	LLC
 
 # Specify the object files that the target depends on
 # Also specify the object files needed to create the executable
-LLC:	LLc.o
+LLC:	LLC.o
 	g++  LLC.o  -o LLC
 
 # Specify how the object files should be created from source files
