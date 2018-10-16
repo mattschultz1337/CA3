@@ -25,7 +25,7 @@ class LLC {
         LLC& operator+(const LLC& other);
         void head(int n);
         std::string tail();
-        friend ostream& operator<<(ostream& os, const LLC& list);
+        friend std::ostream& operator<<(ostream& os, const LLC& list);
         LLC& operator+=(int n);
         int len();
         void join(LLC other);
