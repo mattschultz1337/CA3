@@ -16,11 +16,12 @@ LLC::LLC(const LLC &list){
   if(list.first!=NULL){
     first->data=list.first->data;
     Node *curr = first;
+    while(curr->next!=NULL){
+      curr=curr->next;
+      this.insert(curr->data);
+    }
    }
-   while(curr->next!=NULL){
-     curr=curr->next;
-     this.insert(curr->data);
-   }
+
 };
 LLC& LLC::operator=(const LLC& other){
 
