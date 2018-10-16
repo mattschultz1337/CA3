@@ -14,4 +14,4 @@ LLC.o:	LLC.cpp
 # Specify the object files and executables that are generated
 # and need to be removed to re-compile the whole thing
 clean:
-rm -f *.o LLC.exe
+	rm -f *.o LLC.exe
