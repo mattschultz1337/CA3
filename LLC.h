@@ -1,6 +1,8 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string>
+
+typedef string;
 struct Node {
  string data;
  Node *next;
