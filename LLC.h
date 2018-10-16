@@ -1,6 +1,3 @@
-#ifndef LLC_H
-#define LLC_H
-
 #include <iostream>
 #include <stdlib.h>
 #include <string>
@@ -32,7 +29,4 @@ class LLC {
         LLC& operator+=(int n);
         int len();
         void join(LLC other);
-
-
-
-}
+};
