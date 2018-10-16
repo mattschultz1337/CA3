@@ -7,7 +7,7 @@ using namespace std;
 
   }
 
-  LLC:LLC(const LLC &list){
+  LLC::LLC(const LLC &list){
     first=list.first;
     last=list.last;
   }
