@@ -6,23 +6,35 @@ using namespace std;
   int main(int argc, char *argv[]){
 
   }
-  LLC::Node newNode(std::string d){
+  Node* LLC::newNode(std::string d){
     Node *n = new Node;
     n->data = d;
     n->next=NULL;
-    if(first=NULL){
-      first=n;
-      last=n;
-      n=NULL;
-    } else{
-        last->next = n;
-        last=n;
-      }
+    return n;
   }
   LLC::LLC(const LLC &list){
-    Node *newF = newNode(&list.first.data);
+   if(list.first!=NULL){
+	first->data=list.first->data;
+	Node *curr = first;
+   }
+   
     
+  };
+  LLC& LLC::operator=(const LLC& other){
+   
   }
-  LLC::LLC& operator=(const LLC& other){
-
+  bool LLC::insert(const std::string &d){
+   Node *ins = newNode(d);
+   if(first=NULL){
+      first=ins;
+      last=ins;
+      ins=NULL;
+    } else{
+        last->next = ins;
+        last=ins;
+      }
+   if(last==ins && ins->data==d && ins->next==first){
+      return true;
+   }
+   return false;
   }

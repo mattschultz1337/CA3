@@ -1,3 +1,6 @@
+#ifndef LLC_H
+#define LLC_H
+
 #include <iostream>
 #include <stdlib.h>
 #include <string>
@@ -15,13 +18,13 @@ class LLC {
           first=NULL;
           last=NULL;
         }
-        Node newNode(std::string d);
+        Node* newNode(std::string d);
         LLC(const LLC &list);
         LLC& operator=(const LLC& other);
         ~LLC();
-        bool contains(const std::string &);
-        bool insert(const std::string &);
-        void remove(const std::string &);
+        bool contains(const std::string &d);
+        bool insert(const std::string &d);
+        void remove(const std::string &d);
         void shuffle();
         LLC& operator+(const LLC& other);
         void head(int n);
@@ -31,3 +34,4 @@ class LLC {
         int len();
         void join(LLC other);
 };
+#endif
