@@ -18,7 +18,7 @@ LLC::LLC(const LLC &list){
     Node *curr = first;
     while(curr->next!=NULL){
       curr=curr->next;
-      this.insert(curr->data);
+      insert(curr->data);
     }
    }
 
