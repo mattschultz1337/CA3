@@ -43,6 +43,6 @@ bool LLC::insert(const std::string &d){
    return false;
 }
 LLC::~LLC(){
-  this.first = NULL;
-  this.last = NULL;
+  first = NULL;
+  last = NULL;
 }
