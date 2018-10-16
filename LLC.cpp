@@ -43,6 +43,11 @@ bool LLC::insert(const std::string &d){
    return false;
 }
 LLC::~LLC(){
+  Node* current = first;
+  while( current != NULL ) {
+    Node* next = current->next;
+    delete current;
+    current = next;
+  }
   first = NULL;
-  last = NULL;
 }
