@@ -15,6 +15,7 @@ class LLC {
           first=NULL;
           last=NULL;
         }
+        Node newNode(std::string d);
         LLC(const LLC &list);
         LLC& operator=(const LLC& other);
         ~LLC();
