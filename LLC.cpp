@@ -51,3 +51,9 @@ LLC::~LLC(){
   }
   first = NULL;
 }
+bool LLC::contains(const std::string &d){
+  for(Node* curr = first;curr!=NULL;curr = curr->next){
+    if(curr->data==d) return true;
+  }
+  return false;
+}
