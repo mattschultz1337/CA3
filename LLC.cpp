@@ -1,6 +1,5 @@
 #include <iostream>
 #include <stdlib.h>
-#include <array>
 #include "LLC.h"
 using namespace std;
 
@@ -16,7 +15,7 @@ Node* LLC::newNode(std::string d){
   return n;
 }
 LLC::LLC(string vals[]){
-  for(int i=0;i<vals.size();i++){
+  for(int i=0;i<sizeof(vals)/sizeof(*vals);i++){
     insert(vals[i]);
   }
 }
