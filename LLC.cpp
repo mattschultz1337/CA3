@@ -83,7 +83,7 @@ void shuffle(){
 }
 ostream& operator<<(ostream& os, const LLC& list){
         Node *curr;
-        for(curr list.first; curr != NULL; curr= curr -> next){
+        for(curr = list.first; curr != NULL; curr= curr -> next){
               os << curr -> data << "\n";
         }
 
