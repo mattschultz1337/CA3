@@ -20,6 +20,7 @@ class LLC {
         }
         Node* newNode(std::string d);
         LLC(const LLC &list);
+        LLC(int *vals[]);
         LLC& operator=(const LLC& other);
         ~LLC();
         bool contains(const std::string &d);

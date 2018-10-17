@@ -4,13 +4,19 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
-
+  LLC link = new LLC(["a","b","c","d","e","f"]);
+  cout<<link;
 }
 Node* LLC::newNode(std::string d){
   Node *n = new Node;
   n->data = d;
   n->next=NULL;
   return n;
+}
+LLC::LLC(int *vals[]){
+  for(int i=0;i<vals.length();i++){
+    insert(newNode(vals[i]));
+  }
 }
 LLC::LLC(const LLC &list){
   if(list.first!=NULL){
@@ -56,4 +62,20 @@ bool LLC::contains(const std::string &d){
     if(curr->data==d) return true;
   }
   return false;
+}
+void LLC::remove(const std::string &d){
+  Node* last = NULL;
+  for(Node* curr = first;curr!=NULL;curr = curr->next){
+    if(curr->data==d){
+      if(curr==first){
+        first = curr->next;
+      } else{
+        last->next = curr->next;
+      }
+    }
+    last = curr;
+  }
+}
+void shuffle(){
+
 }
