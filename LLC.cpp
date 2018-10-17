@@ -80,7 +80,7 @@ void LLC::remove(const std::string &d){
 void shuffle(){
 
 }
-friend std::ostream& LLC::operator<<(std::ostream& os, const LLC& list){
+std::ostream& LLC::operator<<(std::ostream& os, const LLC& list){
   Node* current = list->first;
   cout<<"[ "
   while( current->next != NULL ) {
