@@ -82,13 +82,10 @@ void shuffle(){
 
 }
 ostream& operator<<(ostream& os, const LLC& list){
-  Node* current = list.first;
-  os<<"[ ";
-  while( current->next != NULL ) {
-    Node* next = current->next;
-    os<<current->data << ", ";
-    current = next;
-  }
-  os <<current->data<<"]\n";
-  return os;
+        Node *curr;
+        for(curr list.first; curr != NULL; curr= curr -> next){
+              os << curr -> data << "\n";
+        }
+
+        return os;
 }
