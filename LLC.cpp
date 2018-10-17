@@ -6,7 +6,7 @@ using namespace std;
 int main(int argc, char *argv[]){
   string arr [] = {"a","b","c","d","e","f"};
   LLC* link = new LLC(arr);
-  cout<<link;
+  cout<<"testing: "<< link;
 }
 Node* LLC::newNode(std::string d){
   Node *n = new Node;
