@@ -4,7 +4,8 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
-  LLC link = new LLC(["a","b","c","d","e","f"]);
+  arr[] = ["a","b","c","d","e","f"];
+  LLC link = new LLC(arr);
   cout<<link;
 }
 Node* LLC::newNode(std::string d){
@@ -14,7 +15,7 @@ Node* LLC::newNode(std::string d){
   return n;
 }
 LLC::LLC(int *vals[]){
-  for(int i=0;i<vals.length();i++){
+  for(int i=0;i<vals.length;i++){
     insert(newNode(vals[i]));
   }
 }
