@@ -88,5 +88,5 @@ std::ostream& operator<<(std::ostream& os, const LLC& list){
     cout<<current->data << ", ";
     current = next;
   }
-  cout <<current->data<<"]";
+  cout <<current->data<<"]"<<endl;
 }
