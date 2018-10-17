@@ -15,8 +15,8 @@ Node* LLC::newNode(std::string d){
   return n;
 }
 LLC::LLC(string vals[]){
-  for(int i=0;i<&vals.length;i++){
-    insert(newNode(&vals[i]));
+  for(int i=0;i<vals.length;i++){
+    insert(newNode(vals[i]));
   }
 }
 LLC::LLC(const LLC &list){
