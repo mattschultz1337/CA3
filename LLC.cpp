@@ -7,7 +7,7 @@ int main(int argc, char *argv[]){
   string arr [] = {"a","b","c","d","e","f"};
   LLC* link = new LLC(arr);
   cout<<"testing: ";
-  cout<<link;
+  cout<<&link;
 }
 Node* LLC::newNode(std::string d){
   Node *n = new Node;
@@ -81,7 +81,7 @@ void LLC::remove(const std::string &d){
 void shuffle(){
 
 }
-std::ostream& operator<<(std::ostream& os, const LLC& list){
+std::ostream& LLC::operator<<(std::ostream& os, const LLC& list){
         Node *curr;
         for(curr =list.first; curr != NULL; curr= curr -> next){
               os << curr -> data << "\n";

@@ -9,7 +9,7 @@ struct Node {
  Node *next;
 };
 class LLC {
-    friend std::ostream& operator<<(std::ostream& os, const LLC& list);
+
     private:
       Node *first;
       Node *last;
@@ -31,7 +31,7 @@ class LLC {
         LLC& operator+(const LLC& other);
         void head(int n);
         std::string tail();
-
+        friend std::ostream& operator<<(std::ostream& os, const LLC& list);
         LLC& operator+=(int n);
         int len();
         void join(LLC other);
