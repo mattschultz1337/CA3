@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "LLC.h"
 using namespace std;
-
+friend ostream& operator<<(ostream& os, const LLC& list);
 int main(int argc, char *argv[]){
   string arr [] = {"a","b","c","d","e","f"};
   LLC* link = new LLC(arr);

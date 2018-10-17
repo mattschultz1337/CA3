@@ -9,7 +9,7 @@ struct Node {
  Node *next;
 };
 class LLC {
-    friend std::ostream& operator<<(std::ostream& os, const LLC& list);
+  
     private:
       Node *first;
       Node *last;
