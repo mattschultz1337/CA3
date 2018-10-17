@@ -90,4 +90,5 @@ std::ostream& operator<<(std::ostream& os, const LLC& list){
     current = next;
   }
   os <<current->data<<"]\n";
+  return os;
 }
