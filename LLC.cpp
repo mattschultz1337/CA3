@@ -81,8 +81,8 @@ void shuffle(){
 
 }
 std::ostream& operator<<(std::ostream& os, const LLC& list){
-  Node* current = list->first;
-  cout<<"[ "
+  Node* current = list.first;
+  cout<<"[ ";
   while( current->next != NULL ) {
     Node* next = current->next;
     cout<<current->data << ", ";
