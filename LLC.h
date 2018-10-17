@@ -21,9 +21,10 @@ class LLC {
         }
         Node* newNode(std::string d);
         LLC(const LLC &list);
-        LLC(std::string vals[]);
+        LLC(std::string vals[], int n);
         LLC& operator=(const LLC& other);
         ~LLC();
+        friend std::ostream& operator<<(std::ostream&, LLC& list);
         bool contains(const std::string &d);
         bool insert(const std::string &d);
         void remove(const std::string &d);
@@ -31,9 +32,9 @@ class LLC {
         LLC& operator+(const LLC& other);
         void head(int n);
         std::string tail();
-        friend std::ostream& operator<<(std::ostream& os, const LLC& list);
         LLC& operator+=(int n);
         int len();
         void join(LLC other);
 };
+
 #endif

@@ -9,7 +9,7 @@ LLC:	LLC.o
 
 # Specify how the object files should be created from source files
 LLC.o:	LLC.cpp
-	g++ -c LLC.cpp
+	g++ -g -c LLC.cpp
 
 # Specify the object files and executables that are generated
 # and need to be removed to re-compile the whole thing
