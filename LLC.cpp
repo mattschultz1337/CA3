@@ -81,7 +81,7 @@ void LLC::remove(const std::string &d){
 void shuffle(){
 
 }
-ostream& operator<<(ostream& os, const LLC& list){
+std::ostream& operator<<(std::ostream& os, const LLC& list){
         Node *curr;
         for(curr =list.first; curr != NULL; curr= curr -> next){
               os << curr -> data << "\n";
