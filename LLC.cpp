@@ -82,11 +82,11 @@ void shuffle(){
 }
 std::ostream& operator<<(std::ostream& os, const LLC& list){
   Node* current = list.first;
-  cout<<"[ ";
+  os<<"[ ";
   while( current->next != NULL ) {
     Node* next = current->next;
-    cout<<current->data << ", ";
+    os<<current->data << ", ";
     current = next;
   }
-  cout <<current->data<<"]\n";
+  os <<current->data<<"]\n";
 }
