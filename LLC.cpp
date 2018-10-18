@@ -52,10 +52,11 @@ Node * LLC::newNode(string d) {
 LLC::LLC(const LLC & list) {
   if (list.first != NULL) {
     first= newNode(list.first -> data);
-    Node * curr = first;
+    Node * curr = list.first->next;
     while (curr -> next != NULL) {
-      curr = curr -> next;
       insert(curr -> data);
+      curr = curr -> next;
+
     }
   }
 
