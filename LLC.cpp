@@ -27,7 +27,9 @@ int main(int argc, char * argv[]) {
   }
   cout << "Testing <<\n";
   cout << link;
+  cout<<"testing copy constructor\n";
   LLC lilink = *(new LLC(link));
+  cout<<lilink;
   cout << "testing head(3)\n";
   link.head(3);
   cout << "testing remove\n";
@@ -44,8 +46,11 @@ int main(int argc, char * argv[]) {
   cout << "testing join\n";
   link.join(twofer);
   cout<<link;
+  cout<<"testing +\n";
+  twofer = link + lilink;
+  cout<<twofer;
 
-  cout<<lilink;
+
 }
 Node * LLC::newNode(string d) {
   Node* n = new Node;
@@ -57,6 +62,7 @@ Node * LLC::newNode(string d) {
 LLC::LLC(const LLC & list) {
   if (list.first != NULL) {
     first= newNode(list.first -> data);
+    last=first;
     Node * curr = list.first->next;
     while (curr!= NULL) {
       insert(curr -> data);
