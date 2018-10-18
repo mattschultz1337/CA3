@@ -32,6 +32,8 @@ int main(int argc, char * argv[]) {
   cout << "testing remove\n";
   link.remove("c");
   cout<<link;
+  cout << "testing len\n";
+  cout<< link.len();
 
   LLC twofer = *(new LLC());
   size = * ( & arr + 1) - arr;
@@ -150,4 +152,13 @@ LLC& LLC::operator+(const LLC& other){
   LLC othercop = *(new LLC(other));
   last ->next = othercop.first;
   return *this;
+}
+int LLC::len(){
+  Node* curr = first;
+  int retval = 0;
+  while(curr!=NULL){
+    retval++;
+    curr = curr->next;
+  }
+  return retval;
 }
