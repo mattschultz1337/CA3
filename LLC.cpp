@@ -134,11 +134,15 @@ void LLC::head(int n) {
   }
 }
 void LLC::join(LLC other){
-  Node* curr = other.first;
-  while(curr !=NULL){
-    insert(curr->data);
-    curr = curr->next;
+  if(other.first!=NULL){
+    Node* curr = other.first;
+    while(curr!=NULL){
+      insert(curr->data);
+      curr = curr->next;
+    }
+
   }
+
 }
 LLC& LLC::operator+(const LLC& other){
   LLC othercop = *(new LLC(other));
