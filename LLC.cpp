@@ -27,22 +27,25 @@ int main(int argc, char * argv[]) {
   }
   cout << "Testing <<\n";
   cout << link;
+  LLC lilink = *(new LLC(link));
   cout << "testing head(3)\n";
   link.head(3);
   cout << "testing remove\n";
   link.remove("c");
   cout<<link;
   cout << "testing len\n";
-  cout<< link.len();
+  cout<< link.len() << endl;
 
   LLC twofer = *(new LLC());
   size = * ( & arr + 1) - arr;
   for (int x = 0; x < size; x++) {
      twofer.insert(arr[x]);
   }
-  cout<<twofer;
+  cout << "testing join\n";
   link.join(twofer);
   cout<<link;
+
+  cout<<lilink;
 }
 Node * LLC::newNode(string d) {
   Node* n = new Node;
@@ -136,8 +139,7 @@ void LLC::head(int n) {
     cout << "]\n";
   }
 }
-void LLC::join(LLC other){
-  cout<<other;
+void LLC::join(const LLC &other){
   if(other.first!=NULL){
     Node* curr = other.first;
     while(curr!=NULL){

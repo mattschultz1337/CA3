@@ -33,7 +33,7 @@ class LLC {
         std::string tail();
         LLC& operator+=(int n);
         int len();
-        void join(LLC other);
+        void join(const LLC &other);
 };
 
 #endif
