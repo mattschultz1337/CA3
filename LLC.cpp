@@ -101,7 +101,15 @@ bool LLC::insert(const string & d) {
   return true;
 }
 LLC::~LLC() {
-  delete first;
+  Node * current = first;
+  while (current != NULL) {
+    Node * next = current -> next;
+    delete current;
+    current = next;
+  }
+  first = NULL;
+  last = NULL;
+
 }
 bool LLC::contains(const std::string & d) {
   for (Node * curr = first; curr != NULL; curr = curr -> next) {
@@ -124,7 +132,7 @@ void LLC::remove(const std::string & d) {
 }
 void LLC::shuffle() {
   srand(time(NULL));
-  LLC used = *(new LLC());
+  LLC used;
   int leng = len();
   int dest;
   Node* curr = first;
