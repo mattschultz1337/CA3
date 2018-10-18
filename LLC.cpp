@@ -101,13 +101,7 @@ bool LLC::insert(const string & d) {
   return true;
 }
 LLC::~LLC() {
-  Node * current = first;
-  while (current != NULL) {
-    Node * next = current -> next;
-    delete current;
-    current = next;
-  }
-  first = NULL;
+  delete first;
 }
 bool LLC::contains(const std::string & d) {
   for (Node * curr = first; curr != NULL; curr = curr -> next) {
