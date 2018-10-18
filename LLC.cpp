@@ -60,7 +60,7 @@ LLC::LLC(const LLC & list) {
     }
   }
 
-};
+}
 LLC & LLC::operator = (const LLC & other) {
   LLC* copy = new LLC(other);
   first = copy -> first;
@@ -72,7 +72,7 @@ bool LLC::insert(const string & d) {
   Node* ins = newNode(d);
   if (first == NULL) {
     first = ins;
-    last = ins;
+    last = first;
   } else {
     last -> next = ins;
     last = ins;
