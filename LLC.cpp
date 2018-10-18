@@ -20,7 +20,7 @@ int main(int argc, char * argv[]) {
     "k",
     "l"
   };
-  LLC link;
+  LLC link = *(new LLC());
   int size = * ( & vals + 1) - vals;
   for (int i = 0; i < size; i++) {
     link.insert(vals[i]);
@@ -29,16 +29,20 @@ int main(int argc, char * argv[]) {
   cout << link;
   cout << "testing head(3)\n";
   link.head(3);
-  cout << "testing join\n";
-  LLC twofer;
+  cout << "testing remove\n";
+  link.remove("c");
+  cout<<link;
+
+  LLC twofer = *(new LLC());
   size = * ( & arr + 1) - arr;
   for (int x = 0; x < size; x++) {
-    twofer.insert(arr[x]);
+     twofer.insert(arr[x]);
   }
+  cout<<twofer;
   link.join(twofer);
   cout<<link;
 }
-Node * LLC::newNode(std::string d) {
+Node * LLC::newNode(string d) {
   Node* n = new Node;
   n -> data = d;
   n -> next = NULL;
@@ -63,17 +67,16 @@ LLC & LLC::operator = (const LLC & other) {
   return *this;
 }
 
-bool LLC::insert(const std::string & d) {
+bool LLC::insert(const string & d) {
   Node* ins = newNode(d);
   if (first == NULL) {
     first = ins;
     last = ins;
-    ins = NULL;
   } else {
     last -> next = ins;
     last = ins;
   }
-  if (last == ins && ins -> data == d && ins -> next == first) {
+  if (last == ins && ins -> data == d) {
     return true;
   }
   return false;
@@ -132,8 +135,12 @@ void LLC::head(int n) {
 }
 void LLC::join(LLC other){
   Node* curr = other.first;
-  while(curr->next!=NULL){
+  while(curr !=NULL){
     insert(curr->data);
   }
-  insert(curr->data);
+}
+LLC& LLC::operator+(const LLC& other){
+  LLC othercop = *(new LLC(other));
+  last ->next = othercop.first;
+  return *this;
 }

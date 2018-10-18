@@ -21,7 +21,6 @@ class LLC {
         }
         Node* newNode(std::string d);
         LLC(const LLC &list);
-        LLC(std::string vals[], int n);
         LLC& operator=(const LLC& other);
         ~LLC();
         friend std::ostream& operator<<(std::ostream&, LLC& list);
