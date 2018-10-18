@@ -53,7 +53,7 @@ LLC::LLC(const LLC & list) {
   if (list.first != NULL) {
     first= newNode(list.first -> data);
     Node * curr = list.first->next;
-    while (curr -> next != NULL) {
+    while (curr!= NULL) {
       insert(curr -> data);
       curr = curr -> next;
 
