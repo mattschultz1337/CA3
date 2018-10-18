@@ -77,15 +77,12 @@ bool LLC::insert(const string & d) {
   Node* ins = newNode(d);
   if (first == NULL) {
     first = ins;
-    last = first;
+    last = ins;
   } else {
     last -> next = ins;
     last = ins;
   }
-  if (last == ins && ins -> data == d) {
-    return true;
-  }
-  return false;
+  return true;
 }
 LLC::~LLC() {
   Node * current = first;
