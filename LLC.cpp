@@ -134,6 +134,7 @@ void LLC::head(int n) {
   }
 }
 void LLC::join(LLC other){
+  cout<<other;
   if(other.first!=NULL){
     Node* curr = other.first;
     while(curr!=NULL){
