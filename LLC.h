@@ -28,10 +28,10 @@ class LLC {
         bool insert(const std::string &d);
         void remove(const std::string &d);
         void shuffle();
-        LLC& operator+(const LLC& other);
+        LLC operator+(const LLC& other);
         void head(int n);
         std::string tail();
-        LLC& operator+=(int n);
+        LLC operator+=(int n);
         int len();
         void join(const LLC &other);
 };

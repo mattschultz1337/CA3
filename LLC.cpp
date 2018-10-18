@@ -49,6 +49,9 @@ int main(int argc, char * argv[]) {
   cout<<"testing +\n";
   twofer = link + lilink;
   cout<<twofer;
+  cout<<"testing +=\n";
+  lilink+=2;
+  cout<<lilink;
 
 
 }
@@ -153,10 +156,16 @@ void LLC::join(const LLC &other){
   }
 
 }
-LLC& LLC::operator+(const LLC& other){
-  LLC othercop = *(new LLC(other));
-  last ->next = othercop.first;
-  return *this;
+LLC LLC::operator+(const LLC& other){
+  LLC retLLC = *(new LLC(*this));
+  if(other.first!=NULL){
+    Node* curr = other.first;
+    while(curr!=NULL){
+      retLLC.insert(curr->data);
+      curr = curr->next;
+    }
+  }
+    return retLLC;
 }
 int LLC::len(){
   Node* curr = first;
@@ -166,4 +175,14 @@ int LLC::len(){
     curr = curr->next;
   }
   return retval;
+}
+LLC LLC::operator+=(int n){
+  LLC retLLC = *(new LLC(*this));
+  for(int i=0;i<n;i++){
+    last->next = first;
+    last = first;
+    first = first->next;
+    first->next = NULL;
+  }
+  return retLLC;
 }
