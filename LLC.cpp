@@ -182,7 +182,7 @@ LLC LLC::operator+=(int n){
     last->next = first;
     last = first;
     first = first->next;
-    first->next = NULL;
+    last->next = NULL;
   }
   return retLLC;
 }
