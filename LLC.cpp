@@ -51,7 +51,7 @@ Node * LLC::newNode(string d) {
 
 LLC::LLC(const LLC & list) {
   if (list.first != NULL) {
-    first -> data = list.first -> data;
+    first= newNode(list.first -> data);
     Node * curr = first;
     while (curr -> next != NULL) {
       curr = curr -> next;
@@ -137,6 +137,7 @@ void LLC::join(LLC other){
   Node* curr = other.first;
   while(curr !=NULL){
     insert(curr->data);
+    curr = curr->next;
   }
 }
 LLC& LLC::operator+(const LLC& other){
