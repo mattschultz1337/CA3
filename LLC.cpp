@@ -56,10 +56,8 @@ int main(int argc, char * argv[]) {
   cout<<"testing tail()\n";
   twofer.tail();
   cout<< "is the last value in twofer: " << twofer;
-  cout<<"testing shuffle";
-  link.shuffle();
-  cout<<link;
-
+  cout<<"testing contains: does "<< lilink<< "contain 'a'?: " << lilink.contains("a") << "\n";
+  cout<<"testing contains: does "<< lilink<< "contain 'q'?: " << lilink.contains("q") << "\n";
 
 }
 Node * LLC::newNode(string d) {
@@ -129,24 +127,6 @@ void LLC::remove(const std::string & d) {
     }
     last = curr;
   }
-}
-void LLC::shuffle() {
-  srand(time(NULL));
-  LLC used;
-  int leng = len();
-  int dest;
-  Node* curr = first;
-  for(int i=0;i<leng;i++){
-    dest = rand()%len() + 1;
-    for(int j=0;j<dest;j++){
-      if(curr->next != NULL){
-      curr = curr->next;
-      }
-    }
-    used.insert(curr->data);
-  }
-  first = used.first;
-  last = used.last;
 }
 ostream & operator << (ostream & os, LLC & list) {
   Node * curr;
